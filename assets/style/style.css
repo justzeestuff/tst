@@ -23,6 +23,7 @@
 body{
     height: 100vh;
     width: 100vw;
+    background-color: rgba(0, 0, 0, 0.659);
 }
 .inactive{
     display: none;
@@ -60,4 +61,23 @@ body{
 .context_menu .option:hover{
     background-color: var(--border-color);
     color: white;
+}
+/* file start */
+.file{
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    user-select: none;
+}
+.file:hover{
+    border: var(--border-color) 1px solid;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+.file img{
+    height: 100%;
+    width: 100%;
+
+    pointer-events: none;
 }
