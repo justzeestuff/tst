@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: mono;
+    src: url(../fonts/RobotoMono-Italic-VariableFont_wght.ttf);
+}
+:root{
+    --border-color: pink;
+    --font-color: pink;
+}
+
+/* pre made classes start */
+.flex_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.inactive{
+    display: none;
+}
+
+/* context menu start */
+.context_menu{
+    height: auto;
+    width: 200px;
+    background-color: white;
+    font-family: mono;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px var(--border-color) solid;
+
+    transform:perspective(85em)rotateX(28deg);
+
+    box-shadow: var(--border-color) 0 10px 30px;
+
+    position: absolute;
+}
+.context_menu .option{
+    height: 50px;
+    width: 100%;
+    border-bottom: 2px var(--border-color) solid;
+    color: var(--font-color);
+    user-select: none;
+    cursor: pointer;
+
+    transition: ease 0.3s;
+}
+.context_menu .option:last-child{
+    border: none;
+}
+.context_menu .option:hover{
+    background-color: var(--border-color);
+    color: white;
+}
