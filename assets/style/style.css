@@ -26,7 +26,7 @@ body{
     background-color: rgba(0, 0, 0, 0.659);
 }
 .inactive{
-    display: none;
+    display: none !important;
 }
 
 /* context menu start */
@@ -63,21 +63,67 @@ body{
     color: white;
 }
 /* file start */
-.file{
+.app .file{
     height: 50px;
     width: 50px;
 
     position: absolute;
     user-select: none;
 }
-.file:hover{
+.app .file:hover{
     border: var(--border-color) 1px solid;
     transition: ease 0.3s;
     cursor: pointer;
 }
-.file img{
+.app .file img{
     height: 100%;
     width: 100%;
 
     pointer-events: none;
+}
+/* file window start */
+.app .window{
+    width: auto;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    display: flex;
+    flex-direction: column;
+}
+.app .window .bar{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: var(--border-color) 2px solid;
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    background-color: white;
+}
+.app .window .bar I{
+    cursor: pointer;
+}
+.app .window .bar div{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.app .window .display{
+    height: 70vh;
+    width: 70vw;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: var(--border-color) 2px solid;
+    resize: both;
+    overflow: hidden;
+
+    min-width: 160px;
+    min-height: 130px;
+    background-color: white;
 }
