@@ -12,6 +12,10 @@ function dragstart(e) {
     offsetX = e.clientX - item.getBoundingClientRect().left
     offsetY = e.clientY - item.getBoundingClientRect().top
 
+    if(item.classList.contains('bar')){
+        item = item.parentNode
+        item.style.transform = 'none' 
+    }
     e.preventDefault()
 }
 

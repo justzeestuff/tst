@@ -1,6 +1,6 @@
 import { body_options } from './veriables.js';
 import { dragstart } from './dragfunction.js'
-import { windowopen,windowclose } from './window_functions.js';
+import { windowopen,windowclose,window_fullscreen } from './window_functions.js';
 
 body_options.forEach(option => {
     option.addEventListener('click', function(e){
@@ -32,13 +32,15 @@ body_options.forEach(option => {
             fullscreen.classList.add('bi','bi-bounding-box-circles')
            display.classList.add('display',)
 
+        file.addEventListener('mousedown', dragstart)
+        file.addEventListener('dblclick', windowopen)
+        close.addEventListener('click', windowclose)
+        fullscreen.addEventListener('click', window_fullscreen)
+        bar.addEventListener('mousedown', dragstart)
+        
         if(e.currentTarget.id === 'newtxt'){
             icon.src = 'assets/img/txt.webp'
             name.textContent = 'note.txt'
         }
-
-        file.addEventListener('mousedown', dragstart)
-        file.addEventListener('dblclick', windowopen)
-        close.addEventListener('click', windowclose)
     })
 });

@@ -28,6 +28,12 @@ body{
 .inactive{
     display: none !important;
 }
+.fullscreen{
+    height: 92vh !important;
+    width: 100vw !important;
+    transform: none !important;
+    resize: none !important;
+}
 
 /* context menu start */
 .context_menu{
@@ -126,4 +132,5 @@ body{
     min-width: 160px;
     min-height: 130px;
     background-color: white;
+    transition: eaes 0.3s;
 }
