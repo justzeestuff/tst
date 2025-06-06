@@ -21,7 +21,6 @@ function dragstart(e) {
 
 function dragging_fn(e) {
     if (dragging && item) {
-        item.style.position = 'absolute'
         item.style.left = (e.clientX - offsetX) + 'px'
         item.style.top = (e.clientY - offsetY) + 'px'
     }

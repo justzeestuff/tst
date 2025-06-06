@@ -23,16 +23,20 @@
 body{
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.659);
 }
 .inactive{
     display: none !important;
 }
 .fullscreen{
-    height: 92vh !important;
+    height: 100vh !important;
     width: 100vw !important;
     transform: none !important;
     resize: none !important;
+
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 }
 
 /* context menu start */
@@ -50,6 +54,7 @@ body{
     box-shadow: var(--border-color) 0 10px 30px;
 
     position: absolute;
+    z-index: 2;
 }
 .context_menu .option{
     height: 50px;
@@ -75,11 +80,15 @@ body{
 
     position: absolute;
     user-select: none;
+    border: none;
+    text-align: center;
 }
 .app .file:hover{
     border: var(--border-color) 1px solid;
     transition: ease 0.3s;
     cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--border-color);
 }
 .app .file img{
     height: 100%;
@@ -89,8 +98,8 @@ body{
 }
 /* file window start */
 .app .window{
-    width: auto;
-    height: auto;
+    height: 70vh;
+    width: 70vw;
 
     position: absolute;
     top: 50%;
@@ -99,6 +108,12 @@ body{
 
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    resize: both;
+    overflow: hidden;
+
+    min-width: 160px;
+    min-height: 130px;
 }
 .app .window .bar{
     height: 50px;
@@ -121,16 +136,34 @@ body{
     gap: 5px;
 }
 .app .window .display{
-    height: 70vh;
-    width: 70vw;
-    margin-top: 5px;
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     border: var(--border-color) 2px solid;
-    resize: both;
-    overflow: hidden;
 
-    min-width: 160px;
-    min-height: 130px;
     background-color: white;
     transition: eaes 0.3s;
+}
+/* rename input */
+.rename{
+    height: 30px;
+    width: 0.1vw;
+    background-color: var(--border-color);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    text-align: center;
+    font-family: mono;
+    outline: none;
+    transition: ease 0.3s;
+
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.rename:focus{
+    background-color: transparent;
+    border: var(--border-color) solid 2px;
+    color: var(--font-color);
 }

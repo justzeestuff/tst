@@ -1,6 +1,7 @@
 import { body_options } from './veriables.js';
 import { dragstart } from './dragfunction.js'
 import { windowopen,windowclose,window_fullscreen } from './window_functions.js';
+import {file_xmenu_open} from './file_contextmenu.js'
 
 body_options.forEach(option => {
     option.addEventListener('click', function(e){
@@ -34,6 +35,7 @@ body_options.forEach(option => {
 
         file.addEventListener('mousedown', dragstart)
         file.addEventListener('dblclick', windowopen)
+        file.addEventListener('contextmenu', file_xmenu_open)
         close.addEventListener('click', windowclose)
         fullscreen.addEventListener('click', window_fullscreen)
         bar.addEventListener('mousedown', dragstart)
@@ -41,6 +43,8 @@ body_options.forEach(option => {
         if(e.currentTarget.id === 'newtxt'){
             icon.src = 'assets/img/txt.webp'
             name.textContent = 'note.txt'
+            name1.textContent = name.textContent
+            name.id = 'txt'
         }
     })
 });

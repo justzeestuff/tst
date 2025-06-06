@@ -15,11 +15,11 @@ function window_fullscreen(e){
     const window = e.target.closest('.window')
     const display = window.querySelector('.display')
     
-    if(display.classList.contains('fullscreen')){
-        display.classList.remove('fullscreen')
+    if(window.classList.contains('fullscreen')){
+        window.classList.remove('fullscreen')
     }
     else{
-        display.classList.add('fullscreen')
+        window.classList.add('fullscreen')
     }
 }
 
