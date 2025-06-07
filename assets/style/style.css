@@ -20,10 +20,14 @@
     justify-content: center;
     align-items: center;
 }
-body{
+body {
     height: 100vh;
     width: 100vw;
+
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 .inactive{
     display: none !important;
 }
@@ -97,7 +101,7 @@ body{
     pointer-events: none;
 }
 /* file window start */
-.app .window{
+.window{
     height: 70vh;
     width: 70vw;
 
@@ -110,12 +114,11 @@ body{
     flex-direction: column;
     gap: 5px;
     resize: both;
-    overflow: hidden;
-
+    overflow: scroll;
     min-width: 160px;
     min-height: 130px;
 }
-.app .window .bar{
+.window .bar{
     height: 50px;
     width: 100%;
     border-radius: 5px;
@@ -127,15 +130,15 @@ body{
     padding: 0 10px 0 10px;
     background-color: white;
 }
-.app .window .bar I{
+.window .bar I{
     cursor: pointer;
 }
-.app .window .bar div{
+.window .bar div{
     display: flex;
     justify-content: space-between;
     gap: 5px;
 }
-.app .window .display{
+.window .display{
     height: 100%;
     width: 100%;
     border-radius: 5px;
@@ -143,6 +146,7 @@ body{
 
     background-color: white;
     transition: eaes 0.3s;
+    display: flex;
 }
 /* rename input */
 .rename{
@@ -166,4 +170,103 @@ body{
     background-color: transparent;
     border: var(--border-color) solid 2px;
     color: var(--font-color);
+}
+
+
+
+/* settings */
+.display .section{
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-right: var(--border-color) 2px solid;
+}
+
+.display .tabs{
+    width: 70%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.display .section div{
+    height: 50px;
+    width: 100%;
+    border: var(--border-color) 2px solid;
+    color: var(--font-color);
+    border-radius: 10px;
+    font-family: mono;
+    cursor: pointer;
+    transition: ease 0.1s;
+}
+.display .section div:hover{
+    background-color: var(--border-color);
+    color: white;
+}
+/* wallpaper */
+.Wallpaper label{
+    display: block;
+
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: var(--border-color) 2px solid;
+    color: var(--font-color);
+    text-align: center;
+    padding: 10px;
+    font-family: mono;
+    font-size: 14px;
+}
+.Wallpaper label input{
+    display: none;
+}
+.Wallpaper .line{
+    width: 100%;
+    text-align: center;
+    border-bottom: var(--border-color) 2px solid;
+    color: var(--font-color);
+    margin-top: 10px;
+}
+.Wallpaper div{
+    height: 100%;
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.Wallpaper img{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+}
+/* colorss */
+.colors label{
+    width: 99%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    color: var(--font-color);
+    display: flex;
+    gap: 10px;
+    font-family: mono;
+    font-size: 16px;
+    cursor: pointer;
+}
+.colors label input{
+    width: 25px;
+    height: 50%;
+    border: none;
+    outline: none;
+    border-radius: 50px;
 }

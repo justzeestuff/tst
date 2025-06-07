@@ -33,18 +33,46 @@ body_options.forEach(option => {
             fullscreen.classList.add('bi','bi-bounding-box-circles')
            display.classList.add('display',)
 
+
+        file.removeEventListener('mousedown', dragstart)
+        file.removeEventListener('dblclick', windowopen)
+        file.removeEventListener('contextmenu', file_xmenu_open)
+        close.removeEventListener('click', windowclose)
+        fullscreen.removeEventListener('click', window_fullscreen)
+        bar.removeEventListener('mousedown', dragstart)
+
         file.addEventListener('mousedown', dragstart)
         file.addEventListener('dblclick', windowopen)
         file.addEventListener('contextmenu', file_xmenu_open)
         close.addEventListener('click', windowclose)
         fullscreen.addEventListener('click', window_fullscreen)
         bar.addEventListener('mousedown', dragstart)
-        
-        if(e.currentTarget.id === 'newtxt'){
-            icon.src = 'assets/img/txt.webp'
-            name.textContent = 'note.txt'
-            name1.textContent = name.textContent
-            name.id = 'txt'
+
+        switch (e.currentTarget.id) {
+            case 'newtxt':
+                icon.src = 'assets/img/txt.webp'
+                name.textContent = 'note.txt'
+                name1.textContent = name.textContent
+                name.id = 'txt'
+                break;
+            case 'personalize':
+                const Settings = document.querySelector('.Settings')
+                const bar = Settings.querySelector('.bar')
+                const fs = Settings.querySelector('.bi-bounding-box-circles')
+                const close = Settings.querySelector('.bi-x-circle-fill')
+
+                close.removeEventListener('click', windowclose)
+                fs.removeEventListener('click', window_fullscreen)
+                bar.removeEventListener('mousedown', dragstart)
+
+                close.addEventListener('click', windowclose)
+                fs.addEventListener('click', window_fullscreen)
+                bar.addEventListener('mousedown', dragstart)
+
+
+                Settings.classList.remove('inactive')
+                app.remove()
+                break;
         }
     })
 });

@@ -27,9 +27,49 @@
         </div>
     </div> -->
 
+    <div class="window Settings inactive">
+        <div class="bar">
+            <p>Settings</p>
+            <div>
+                <i class="bi bi-bounding-box-circles"></i>
+                <i class="bi bi-x-circle-fill"></i>
+            </div>
+        </div>
+        <div class="display">
+            <div class="section">
+                <div class="flex_center sectionbtns" data-tab="wallpaper"><p>Wallpaper</p></div>
+                <div class="flex_center sectionbtns" data-tab="colors"><p>Colors</p></div>
+            </div>
+            <div class="Wallpaper tabs" id="wallpaper">
+                <label>
+                    <p>Costum wallpaper</p>
+                    <input type="file" accept="image/*" id="wallpaperinput">
+                </label>
+                <label id="removewallpaper">
+                    <p>Remove wallpaper</p>
+                </label>
+                <p class="line">premade wallpapers!</p>
+                <div>
+                    <img src="assets/img/walpepr.png" alt="" class="premadebg">
+                    <p class="line">pink planet by my bsf!</p>
+                </div>
+            </div>
+            <div class="colors tabs inactive" id="colors">
+                <label class="flex_center" id="bordercolor">
+                    <p>border,shadow,hover  color: </p>
+                    <input type="color">
+                </label>
+                <label class="flex_center" id="fontcolor">
+                    <p>font color: </p>
+                    <input type="color">
+                </label>
+            </div>
+        </div>
+    </div>
+
     <div class="context_menu body_Xmenu inactive">
         <div class="option flex_center" id="newtxt"><p>New Txt</p></div>
-        <div class="option flex_center"><p>Personalize</p></div>
+        <div class="option flex_center" id="personalize"><p>Personalize</p></div>
     </div>
 
     <div class="context_menu file_Xmenu inactive">
@@ -41,5 +81,9 @@
     
     <script type="module" src="assets/script/Contextmenu.js"></script>
     <script type="module" src="assets/script/Newfile.js"></script>
+
+    <script type="module" src="assets/script/Wallpaper.js"></script>
+    <script type="module" src="assets/script/Colors.js"></script>
+    <script type="module" src="assets/script/settings_tabs.js"></script>
 </body>
 </html>

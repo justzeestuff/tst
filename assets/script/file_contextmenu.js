@@ -60,3 +60,12 @@ function consistant_format() {
         break;
     }
 }
+
+
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        console.log('User left the tab');
+    } else {
+        console.log('User returned to the tab');
+    }
+});
