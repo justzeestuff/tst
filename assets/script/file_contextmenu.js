@@ -3,7 +3,6 @@ import { file_Xmenu,file_options } from './veriables.js';
 let rename_input = document.querySelector('.rename')
 let renamingitem = null
 
-
 // file context menu open
 export function file_xmenu_open(e){
     if(file_Xmenu.classList.contains('inactive')){
@@ -11,9 +10,12 @@ export function file_xmenu_open(e){
         file_Xmenu.style.top = e.clientY + 'px'
         file_Xmenu.classList.remove('inactive')
         renamingitem = e.target
+
+        e.stopPropagation()
+        e.preventDefault()
+
     }
 }
-
 // file contextmenu options
 file_options.forEach(option => {
     option.addEventListener('click', function(e){
@@ -30,8 +32,6 @@ file_options.forEach(option => {
         }
     })
 });
-
-
 // rennaming input
 rename_input.addEventListener('input', function(){consistant_format()})
 
@@ -58,14 +58,9 @@ function consistant_format() {
             name.innerHTML = rename_input.value + '.txt';
             name1.innerHTML = rename_input.value + '.txt';
         break;
+        case 'folder':
+            name.innerHTML = rename_input.value;
+            name1.innerHTML = rename_input.value;
+        break;
     }
 }
-
-
-document.addEventListener('visibilitychange', function () {
-    if (document.hidden) {
-        console.log('User left the tab');
-    } else {
-        console.log('User returned to the tab');
-    }
-});

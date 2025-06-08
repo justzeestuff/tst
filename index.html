@@ -27,6 +27,37 @@
         </div>
     </div> -->
 
+    <div class="windowsbar">
+        <img src="assets/img/cat2.png" class="startcat">
+        <p id="clock">00:00</p>
+        <div class="windows_ui inactive">
+            <div class="games">
+                <button id="Memorygame"><p>Memory game</p></button>
+                <button id="player"><p>Mp3 player</p></button>
+            </div>
+            <div class="options">
+                <i class="bi bi-gear"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="window songplayer">
+        <div class="bar">
+            <p>Memory card game</p>
+            <div>
+                <i class="bi bi-x-circle-fill"></i>
+            </div>
+        </div>
+        <div class="display songdisplay">
+            <label class="flex_center">
+                <p>import your song here!</p>
+                <input type="file" accept=".mp3">
+            </label>
+            <audio src="assets/img/Meow Sound Effect.mp3" controls></audio>
+        </div>
+
+    </div>
+
     <div class="window Settings inactive">
         <div class="bar">
             <p>Settings</p>
@@ -53,6 +84,10 @@
                     <img src="assets/img/walpepr.png" alt="" class="premadebg">
                     <p class="line">pink planet by my bsf!</p>
                 </div>
+                <div>
+                    <img src="assets/img/walpepr.png" alt="" class="premadebg">
+                    <p class="line">pink planet by my bsf!</p>
+                </div>
             </div>
             <div class="colors tabs inactive" id="colors">
                 <label class="flex_center" id="bordercolor">
@@ -67,6 +102,25 @@
         </div>
     </div>
 
+    <div class="window Memorygame inactive">
+        <div class="bar">
+            <p>Memory card game</p>
+            <div>
+                <i class="bi bi-bounding-box-circles"></i>
+                <i class="bi bi-x-circle-fill"></i>
+            </div>
+        </div>
+        <div class="display">
+            <iframe src="https://justzeestuff.github.io/memory-game/" scrolling="no" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <div class="main_menu flex_center inactive">
+        <img src="assets/img/cat2.png" class="cat_head">
+        <p class="title">welcome to Z angel</p>
+        <button id="Emulatebtn"><p>Emulate</p></button>
+    </div>
+    
     <div class="context_menu body_Xmenu inactive">
         <div class="option flex_center" id="newtxt"><p>New Txt</p></div>
         <div class="option flex_center" id="personalize"><p>Personalize</p></div>
@@ -85,5 +139,11 @@
     <script type="module" src="assets/script/Wallpaper.js"></script>
     <script type="module" src="assets/script/Colors.js"></script>
     <script type="module" src="assets/script/settings_tabs.js"></script>
+
+    <script type="module" src="assets/script/mainmenu.js"></script>
+    <script type="module" src="assets/script/startgames.js"></script>
+    <script type="module" src="assets/script/startopen.js"></script>
+    <script src="assets/script/clock.js"></script>
+    <script src="assets/script/mp3player.js"></script>
 </body>
 </html>

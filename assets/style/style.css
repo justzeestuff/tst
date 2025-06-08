@@ -32,7 +32,7 @@ body {
     display: none !important;
 }
 .fullscreen{
-    height: 100vh !important;
+    height: 93% !important;
     width: 100vw !important;
     transform: none !important;
     resize: none !important;
@@ -42,6 +42,64 @@ body {
     left: 0 !important;
     right: 0 !important;
 }
+
+/* main menu screen */
+.main_menu{
+    height: 100%;
+    width: 100%;
+    background: #f27ccb;
+    background: radial-gradient(circle,rgba(242, 124, 203, 1) 1%, rgba(166, 61, 163, 1) 93%);
+    flex-direction: column;
+    gap: 10px;
+    transition: ease 0.3s;
+    overflow: hidden;
+}
+.main_menu .cat_head{
+    animation: spin ease 3s infinite;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.main_menu .title{
+    font-family: mono;
+    font-size: 25px;
+    color: white;
+}
+.main_menu button{
+    width: 200px;
+    height: 50px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.main_menu button:hover{
+    box-shadow: var(--border-color) 0 0 20px;
+    width: 210px;
+    height: 52;
+    transition: ease 0.3s;
+}
+.main_menu button p{
+    color: white;
+    font-size: 18px;
+}
+.main_menu .display{
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+    color: var(--font-color);
+    font-size: 22px;
+}
+@keyframes spin {
+    from{
+        rotate: 0;
+    }
+    to{
+        rotate: 360deg;
+    }
+}
+
 
 /* context menu start */
 .context_menu{
@@ -130,6 +188,10 @@ body {
     padding: 0 10px 0 10px;
     background-color: white;
 }
+.window .bar p{
+    color: var(--font-color);
+    font-size: 14px;
+}
 .window .bar I{
     cursor: pointer;
 }
@@ -147,6 +209,43 @@ body {
     background-color: white;
     transition: eaes 0.3s;
     display: flex;
+    padding: 10px;
+}
+.window .display .playstore{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.playstore .item{
+    height: 240px;
+    width: 200px;
+    background-color: var(--border-color);
+    border: var(--border-color) 2px solid;
+    border-radius: 10px;
+    text-align: center;
+}
+.playstore .item img{
+    height: 150px;
+    width: 150px;
+}
+.playstore .item button{
+    margin-top: 20px;
+    width: 80%;
+    height: 30px;
+    border: var(--border-color) 1px solid;
+    border-radius: 10px;
+    color: var(--font-color);
+    background-color: white;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+.playstore .item button:hover{
+    font-size: 18px;
+    height: 35px;
+    width: 85%;
 }
 /* rename input */
 .rename{
@@ -207,6 +306,19 @@ body {
 .display .section div:hover{
     background-color: var(--border-color);
     color: white;
+}
+
+.display iframe{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.display textarea{
+    height: 100%;
+    width: 100%;
+    resize: none;
+    border: none;
+    outline: var(--border-color);
 }
 /* wallpaper */
 .Wallpaper label{
@@ -269,4 +381,97 @@ body {
     border: none;
     outline: none;
     border-radius: 50px;
+}
+/* windows bar */
+.windowsbar{
+    height: 50px;
+    width: 100%;
+    background-color: var(--border-color);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+    z-index: 90;
+}
+.windowsbar img{
+    height: 100%;
+}
+.windowsbar p{
+    font-size: 19px;
+    color: white;
+    font-family: mono;
+}
+.windows_ui{
+    height: 0.1px;
+    width: 300px;
+    position: absolute;
+    bottom: 54px;
+    display: flex;
+    gap: 10px;
+    transition: ease 0.3s;
+    overflow: hidden;
+}
+/* games */
+.games{
+    width: 85%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 20px;
+    border: var(--border-color) 2px solid;
+}
+.games button{
+    width: 100%;
+    height: 50px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    border: none;
+    transition: ease 0.3s;
+    cursor: pointer;
+}
+.games button:hover{
+    border: rgba(0, 0, 255, 0.31) 3px solid;
+}
+.games button p{
+    font-size: 15px;
+    color: white;
+}
+.options{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    padding-top: 15px;
+    color: var(--font-color);
+    border: var(--border-color) 2px solid;
+    border-radius: 20px;
+}
+.songplayer{
+    height: 60vh !important;
+    width: 300px !important;
+    resize: none;
+}
+.songdisplay{
+    flex-direction: column;
+}
+.songdisplay label{
+    width: 100%;
+    height: 50px;
+    border: var(--border-color) 2px solid;
+    color: var(--font-color);
+    border-radius: 5px;
+}
+.songdisplay audio{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+}
+.songdisplay label input{
+    display: none;
 }

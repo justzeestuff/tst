@@ -50,12 +50,15 @@ body_options.forEach(option => {
 
         switch (e.currentTarget.id) {
             case 'newtxt':
+                let textarea = document.createElement('textarea')
+                display.appendChild(textarea)
                 icon.src = 'assets/img/txt.webp'
                 name.textContent = 'note.txt'
                 name1.textContent = name.textContent
                 name.id = 'txt'
+                app.classList.add('txt')
                 break;
-            case 'personalize':
+            case 'personalize':{
                 const Settings = document.querySelector('.Settings')
                 const bar = Settings.querySelector('.bar')
                 const fs = Settings.querySelector('.bi-bounding-box-circles')
@@ -69,10 +72,26 @@ body_options.forEach(option => {
                 fs.addEventListener('click', window_fullscreen)
                 bar.addEventListener('mousedown', dragstart)
 
-
                 Settings.classList.remove('inactive')
                 app.remove()
-                break;
+                break;}
+            case 'playstore':{
+                const playstore = document.querySelector('.playstore')
+                const bar = playstore.querySelector('.bar')
+                const fs = playstore.querySelector('.bi-bounding-box-circles')
+                const close = playstore.querySelector('.bi-x-circle-fill')
+
+                close.removeEventListener('click', windowclose)
+                fs.removeEventListener('click', window_fullscreen)
+                bar.removeEventListener('mousedown', dragstart)
+
+                close.addEventListener('click', windowclose)
+                fs.addEventListener('click', window_fullscreen)
+                bar.addEventListener('mousedown', dragstart)
+
+                playstore.classList.remove('inactive')
+                app.remove()
+                break;}
         }
     })
 });

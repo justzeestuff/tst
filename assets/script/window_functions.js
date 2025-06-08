@@ -13,7 +13,6 @@ function windowclose(e){
 
 function window_fullscreen(e){
     const window = e.target.closest('.window')
-    const display = window.querySelector('.display')
     
     if(window.classList.contains('fullscreen')){
         window.classList.remove('fullscreen')
