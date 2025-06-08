@@ -58,9 +58,5 @@ function consistant_format() {
             name.innerHTML = rename_input.value + '.txt';
             name1.innerHTML = rename_input.value + '.txt';
         break;
-        case 'folder':
-            name.innerHTML = rename_input.value;
-            name1.innerHTML = rename_input.value;
-        break;
     }
 }

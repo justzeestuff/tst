@@ -25,7 +25,16 @@ game_options.forEach(Option => {
                 break;
             }
             case 'player':{
-                
+                let songplayer = document.querySelector('.songplayer')
+                const close = songplayer.querySelector('.bi-x-circle-fill')
+                const bar = songplayer.querySelector('.bar')
+                songplayer.classList.remove('inactive')
+
+                close.removeEventListener('click', windowclose)
+                bar.removeEventListener('mousedown', dragstart)
+
+                close.addEventListener('click', windowclose)
+                bar.addEventListener('mousedown', dragstart)        
             }
         }
     }
